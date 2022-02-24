@@ -9,6 +9,11 @@
                 <div v-if="post.tags.length > 0">
                     <span v-for="tag in post.tags" :key="tag.id"> {{tag.name}}</span>
                 </div>
+
+                <router-link :to="{name: 'single-post', params: { slug: post.slug } }">
+                    <button type="button" class="btn btn-primary">Visualizza</button>
+                </router-link>
+
             </li>
         </ul>
       </div>

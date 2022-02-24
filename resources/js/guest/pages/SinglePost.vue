@@ -1,6 +1,6 @@
 <template>
   <div>
-      <div class="container">
+      <div class="container my-4">
         <h1>{{post.title}}</h1>
         <p>{{post.content}}</p>
         
