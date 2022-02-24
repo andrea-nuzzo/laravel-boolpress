@@ -1,12 +1,12 @@
 <template>
-  <footer>
-
-  </footer>
+  <div>
+      <h1>Sono Home</h1>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'Footer',
+    name: "Home"
 }
 </script>
 
