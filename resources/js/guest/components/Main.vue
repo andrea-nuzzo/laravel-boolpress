@@ -13,7 +13,6 @@ export default {
 
 <style>
 main{
-    height: 300px;
     widows: 100%;
     background-color: lightcoral;
 }
