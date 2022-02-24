@@ -1,6 +1,18 @@
 <template>
   <header>
-    <div class="head">Header</div>
+    <div class="head">
+      <h1>Header</h1>
+      <ul>
+        <li>
+          <router-link :to="{name: 'home'}">Home</router-link>
+        </li>
+        <li>
+          <router-link :to="{name: 'about'}">Chi siamo</router-link>
+        </li>
+      </ul>
+
+    </div>
+    
   </header>
 </template>
 
