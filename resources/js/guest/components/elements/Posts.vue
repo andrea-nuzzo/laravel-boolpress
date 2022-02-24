@@ -7,7 +7,7 @@
                 {{post.title}}
                 <p v-if="post.category">Categoria: {{post.category.name}}</p>
                 <div v-if="post.tags.length > 0">
-                    <span v-for="tag in post.tags" :key="tag.id"> {{tag.naem}}</span>
+                    <span v-for="tag in post.tags" :key="tag.id"> {{tag.name}}</span>
                 </div>
             </li>
         </ul>

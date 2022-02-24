@@ -5,7 +5,7 @@ Vue.use(VueRouter);
 
 import Home from "./pages/Home";
 import About from "./pages/About";
-import SinglePost from "./components/elements/SinglePost.vue";
+import SinglePost from "./pages/SinglePost.vue";
 
 const router = new VueRouter({
     mode: "history",
