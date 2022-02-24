@@ -2030,6 +2030,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Posts",
   data: function data() {
@@ -38568,7 +38572,24 @@ var render = function () {
         "ul",
         _vm._l(_vm.posts, function (post) {
           return _c("li", { key: post.id }, [
-            _c("strong", [_vm._v(_vm._s(post.title))]),
+            _vm._v(
+              "\n              " + _vm._s(post.title) + "\n              "
+            ),
+            post.category
+              ? _c("p", [_vm._v("Categoria: " + _vm._s(post.category.name))])
+              : _vm._e(),
+            _vm._v(" "),
+            post.tags.length > 0
+              ? _c(
+                  "div",
+                  _vm._l(post.tags, function (tag) {
+                    return _c("span", { key: tag.id }, [
+                      _vm._v(" " + _vm._s(tag.naem)),
+                    ])
+                  }),
+                  0
+                )
+              : _vm._e(),
           ])
         }),
         0
@@ -54462,6 +54483,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/guest/components/elements/SinglePost.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/guest/components/elements/SinglePost.vue ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
+  script,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "resources/js/guest/components/elements/SinglePost.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/guest/front.js":
 /*!*************************************!*\
   !*** ./resources/js/guest/front.js ***!
@@ -54653,9 +54706,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Home */ "./resources/js/guest/pages/Home.vue");
 /* harmony import */ var _pages_About__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/About */ "./resources/js/guest/pages/About.vue");
+/* harmony import */ var _components_elements_SinglePost_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/elements/SinglePost.vue */ "./resources/js/guest/components/elements/SinglePost.vue");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
 
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
@@ -54668,6 +54723,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: "/chi-siamo",
     name: "about",
     component: _pages_About__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    path: "/posts/:slug",
+    name: "single-post",
+    component: _components_elements_SinglePost_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);

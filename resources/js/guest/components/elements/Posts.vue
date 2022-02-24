@@ -4,7 +4,11 @@
         <h2>Lista dei Posts</h2>
         <ul>
             <li v-for="post in posts" :key="post.id">
-                <strong>{{post.title}}</strong>
+                {{post.title}}
+                <p v-if="post.category">Categoria: {{post.category.name}}</p>
+                <div v-if="post.tags.length > 0">
+                    <span v-for="tag in post.tags" :key="tag.id"> {{tag.naem}}</span>
+                </div>
             </li>
         </ul>
       </div>
