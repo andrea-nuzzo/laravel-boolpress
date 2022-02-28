@@ -11,7 +11,7 @@
                          {{-- Immagine --}}
                         @if ($post->image)
                             <div class="d-flex justify-content-center">
-                                <img src="{{asset("storage/{$post->image}")}}" alt="{{$post->title}}" class="rounded">
+                                <img  width="600"src="{{asset("storage/{$post->image}")}}" alt="{{$post->title}}" class="rounded">
                             </div>
                         @endif
 

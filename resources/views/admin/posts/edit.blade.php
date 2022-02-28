@@ -9,7 +9,7 @@
                     <div class="card-header">Modifica il Post</h2></div>
 
                     <div class="card-body"> 
-                        <form action="{{route("posts.update", $post->id)}}" method="POST">
+                        <form action="{{route("posts.update", $post->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method("PUT")
 
@@ -63,6 +63,31 @@
                                 @error('tags')
                                     <div class="alert alert-danger my-2"> {{$message}}</div>
                                 @enderror
+                            
+                            <div class="form-group my-4">
+                                
+                                <label for="exampleFormControlFile1">Add a image</label>
+                                <div class="d-flex align-items-center">
+                                    @if ($post->image)
+                                        <img id="uploadPreview" width="100" src="{{asset("storage/{$post->image}")}}" alt="{{$post->title}}">
+                                    @else 
+                                    <img id="uploadPreview" width="100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3lzH45w9milEJzJv9h1ZlCiSYgtTM7j0Ng&usqp=CAU">
+                                    @endif
+                                    <input type="file" class="form-control-file mx-3" id="image" name="image" onchange="PreviewImage();">
+                                </div>
+                                
+                                {{-- PreviewImage --}}
+                                <script type="text/javascript">
+                                    function PreviewImage() {
+                                        var oFReader = new FileReader();
+                                        oFReader.readAsDataURL(document.getElementById("image").files[0]);
+
+                                        oFReader.onload = function (oFREvent){
+                                            document.getElementById("uploadPreview").src= oFREvent.target.result;
+                                        };
+                                    };
+                                </script>
+                            </div>
 
                             <div class="form-group form-check">
                                 @php

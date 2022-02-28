@@ -55,11 +55,26 @@
                                     <div class="alert alert-danger my-2"> {{$message}}</div>
                                 @enderror
                             
-                            <div class="form-group my-4">
-                                <label for="exampleFormControlFile1">Add a image</label>
-                                <input type="file" class="form-control-file" id="image" name="image">
-                            </div>
-
+                                <div class="form-group my-4">
+                                
+                                    <label for="exampleFormControlFile1">Add a image</label>
+                                    <div class="d-flex align-items-center">
+                                        <img id="uploadPreview" width="100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3lzH45w9milEJzJv9h1ZlCiSYgtTM7j0Ng&usqp=CAU">
+                                        <input type="file" class="form-control-file mx-3" id="image" name="image" onchange="PreviewImage();">
+                                    </div>
+                                    
+                                    {{-- PreviewImage --}}
+                                    <script type="text/javascript">
+                                        function PreviewImage() {
+                                            var oFReader = new FileReader();
+                                            oFReader.readAsDataURL(document.getElementById("image").files[0]);
+    
+                                            oFReader.onload = function (oFREvent){
+                                                document.getElementById("uploadPreview").src= oFREvent.target.result;
+                                            };
+                                        };
+                                    </script>
+                                </div>
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input @error('published') is-invalid @enderror" name="published" id="published" {{old('published') ? 'checked': ''}} >
                                 <label class="form-check-label" for="published">Published</label>
