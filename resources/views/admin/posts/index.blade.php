@@ -37,12 +37,11 @@
                                 {{$post->published ? "✅" : "❌"}}
                             </div>
                             <div class="col-1 text-center">
-                                {{-- @if ($category->name)
-                                    Si
+                                @if ($post->category)
+                                    {{$post->category->name}}
                                 @else
                                     Nessuna
-                                @endif --}}
-                                    Nessuna
+                                @endif
                             </div>
                             <div class="col-1 my-1">
                                 <a href="{{route("posts.show", $post->id)}}"><button type="button" class="btn showBtn">Show</button></a>
