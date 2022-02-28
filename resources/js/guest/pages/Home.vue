@@ -1,6 +1,5 @@
 <template>
-  <div>
-      <h1>Sono Home</h1>
+  <div class="home">
       <Posts/>
   </div>
 </template>
@@ -16,6 +15,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+    .home {
+        height: calc(100vh - 100px);
+    }
 
 </style>

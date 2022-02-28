@@ -12,8 +12,5 @@ export default {
 </script>
 
 <style>
-main{
-    widows: 100%;
-    background-color: lightcoral;
-}
+
 </style>
