@@ -8,6 +8,8 @@ use Illuminate\Support\Str;
 use App\Post;
 use App\Category;
 use App\Tag;
+use Illuminate\Support\Facades\Storage;
+
 class PostController extends Controller
 {
     protected $validation = [
@@ -16,6 +18,7 @@ class PostController extends Controller
         "puplished"=>"sometimes|accepted",
         "category_id"=>"nullable|exists:categories,id",
         "tags"=>"nullable|exists:tags,id",
+        "image" => "nullable|image|max:2048",
     ];
 
     /**
@@ -73,6 +76,11 @@ class PostController extends Controller
             $count ++;
         }
         $newPost->slug = $slug;
+
+        if(isset($data["image"])){
+            $path_image = Storage::put("uploads", $data["image"]);
+            $newPost->image =  $path_image;
+        }
 
         $newPost->save();
 

@@ -9,7 +9,7 @@
                     <div class="card-header">Crea un nuovo Post</h2></div>
 
                     <div class="card-body"> 
-                        <form action="{{route("posts.store")}}" method="POST">
+                        <form action="{{route("posts.store")}}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
@@ -54,6 +54,11 @@
                                 @error('tags')
                                     <div class="alert alert-danger my-2"> {{$message}}</div>
                                 @enderror
+                            
+                            <div class="form-group my-4">
+                                <label for="exampleFormControlFile1">Add a image</label>
+                                <input type="file" class="form-control-file" id="image" name="image">
+                            </div>
 
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input @error('published') is-invalid @enderror" name="published" id="published" {{old('published') ? 'checked': ''}} >

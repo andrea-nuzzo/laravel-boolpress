@@ -8,6 +8,13 @@
                 <div class="card">
                     <div class="card-header"><h2>{{$post->title}}</h2></div>
                     <div class="m-3">
+                         {{-- Immagine --}}
+                        @if ($post->image)
+                            <div class="d-flex justify-content-center">
+                                <img src="{{asset("storage/{$post->image}")}}" alt="{{$post->title}}" class="rounded">
+                            </div>
+                        @endif
+
                         {{-- Contenuto del post --}}
                         <h5>Content</h5>
                         <div class="card-body rounded border border-dark"> 

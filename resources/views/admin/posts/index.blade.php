@@ -38,7 +38,7 @@
                             </div>
                             <div class="col-1 text-center">
                                 {{-- @if ($category->name)
-                                    {{$category->name}}
+                                    Si
                                 @else
                                     Nessuna
                                 @endif --}}
