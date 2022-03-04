@@ -3,12 +3,8 @@
         
         <div class="boxImage"
         v-for="post in posts" :key="post.id" 
-        :style="{backgroundImage:`url(/storage/${post.image})`}"
-        @mouseover="isHovering = post.id" 
-        @mouseout="isHovering = '' "
-        >   
-            <div class="cover" :class="isHovering == post.id ? 'active' : '' "></div>
-
+        :style="{backgroundImage:`url(/storage/${post.image})`}">   
+            <div class="cover"></div>
             <div class="container d-flex align-items-center justify-content-center flex-column">
                 <div class="categoryTag">
                     <span class="category" v-if="post.category">{{post.category.name}}</span>
@@ -47,7 +43,6 @@ export default {
 
 <style lang="scss" scoped>
 
-    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
     .gridColumn{
         display: grid;
@@ -68,11 +63,9 @@ export default {
         width: 100%;
     }
 
-    
     .titleLink{
         color: white;
         font-size: 36px;
-        font-family: 'Oswald', sans-serif;
         font-weight: 400;
         text-decoration: none;
         
@@ -85,10 +78,11 @@ export default {
     .category, .tag{
         color: #baa798;
         text-transform: uppercase;
+
     }
 
-    .cover{
-        display: none;
+    .boxImage:hover .cover{
+        transition: 0.9s;
         background-color: #83786d;
         height: 100%;
         width: 100%;
@@ -96,9 +90,7 @@ export default {
         position: absolute;
         z-index: 1;
     }
-    .active{
-       display: block;
-    }
+   
 
 
 
