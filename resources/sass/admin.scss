@@ -7,44 +7,89 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// FontAwesome
+@import '~@fortawesome/fontawesome-free/css/all.css';
 
+/*  ---------------
+  | BackGround Color|
+    --------------- */
 
-// BUTTON
-.createBtn{
-    background-color: #bfe1c2;
+.backgroundDark{
+    background-color: $brownDark;
+}
+.backgroundLight{
+    background-color: $brownLight;
 }
 
-.bozza{
-    background-color: #ff4747;
+/*  ----------
+  | Text Color |
+    ---------- */
+
+.textColor {
+    color: $brownDark;
+}
+
+/*  ------
+  | Button |
+    ------ */
+
+.createBtn{
+    background-color: $brownDark;
+    color: $brownLight;
 }
 
 .createBtn:hover{
     transform: scale(1.1);
+    transition: 1s;
+    background-color: $brownLight;
+    color: $brownDark;
+    border: 1px solid $brownDark;
 }
 
-.updateBtn:hover, .showBtn:hover{
-    background-color: #975fdc;
-    color: white;
+.plainBtn, .deleteBtn{
+    border: 1px solid $brownDark;
+}
+
+.plainBtn:hover {
+    transition: 1s;
+    background-color: $brownDark;
+    color: $brownLight;
 }
 
 .deleteBtn:hover{
+    transition: 1s;
     background-color: #f94144;
-    color: white;
+    color: $brownLight;
 }
+
+
+// Section Show Post
+.draftBtn{
+    background-color: $red;
+}
+.postedBtn{
+    background-color: $green;
+}
+
+// Section Create Post
+#uploadPreview {
+    border-radius: 0.5rem;
+}
+
+
+
+
+
 
 .title, .slug{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.bgColor{
-    background-color:rgb(151, 95, 220, 0.3);
-    border-radius: 0.5rem;
 
-}
 
 .showCategory{
-    background-color: #975fdc;
+    background-color: $brownDark;
     color: white;
 }
 

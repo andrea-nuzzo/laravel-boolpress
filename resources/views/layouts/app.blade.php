@@ -19,9 +19,9 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
 </head>
-<body class="bg-dark">
+<body class="backgroundDark">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light backgroundLight shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Boolpress
@@ -83,7 +83,7 @@
             </div>
         </nav>
 
-        <main class="py-4 bg-dark">
+        <main class="py-4 backgroundDark">
             @yield('content')
         </main>
     </div>
